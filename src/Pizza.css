@@ -1,0 +1,16 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.pizza {
+  width: 600px;
+  border-radius: 50%;
+  transition: transform linear 1s;
+}
+
+.pizza:hover {
+  transform: scale(1.1);
+  cursor: grab;
+}
