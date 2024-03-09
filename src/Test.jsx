@@ -1,18 +1,61 @@
+import './Test.css'
+/*
+function List(props) {
+  if (!props.animals) {
+    return <div>Loading...</div>
+  }
+  if (props.animals.length === 0) {
+    return <div>There are no animals in the list!</div>
+  } 
+  return (
+    <ul>
+      {props.animals.map((animal)=> {
+        return <li key={animal}>{animal}</li>
+      })}
+    </ul>
+  )
+}
+*/
+/*
+function List(props) {
+  return (
+    <>
+    {!props.animals ? (
+      <div>Loading...</div>
+    ) : props.animals.length > 0 ? (
+      <ul>
+        {props.animals.map((animal)=>{
+          return <li key={animal}>{animal}</li>
+        })}
+      </ul>
+    ) : (
+      <div>There are no animals in the list!</div>
+    )}
+    </>
+  )
+}
+*/
+function List(props) {
+  return (
+    <>
+    {!props.animals && <div>Loading...</div>}
+    {props.animals && props.animals.length > 0 && (
+      <ul>
+        {props.animals.map((animal)=> {
+          return <li key={animal}>{animal}</li>
+        })}
+      </ul>
+    )}
+    {props.animals && props.animals.length === 0 && <div>There are no animals in the list!</div>}
+    </>
+  )
+}
 function Test() {
-    return (
+  const animals = ['Lion', 'Cow', 'Snake', 'Lizard', 'Monkey']
+  return (
       <div>
-        <h1>Test title</h1>
-        <ol className="test-list">
-          <li>List item 1</li>
-          <li>List item 2</li>
-          <li>List item 3</li>
-        </ol>
-        <svg>
-           <circle cx="25" cy="75" r="20" stroke="green" strokeWidth="2" />
-        </svg>
-        <form>
-          <input type="text"/>
-          </form>
+        <h1>Animals: </h1>
+        <List animals={animals} />
       </div>
     )
   }
