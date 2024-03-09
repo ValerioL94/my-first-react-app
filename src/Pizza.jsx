@@ -10,4 +10,4 @@ function Hungry() {
     )
 }
 
-export default Hungry;
+export  {Hungry}
